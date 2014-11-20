@@ -1,0 +1,45 @@
+<html>
+<head>
+    <script src="targil.js" ></script> 
+    <link href="targil.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    
+    <div class="container">
+        <h1>My Bookshelf</h1>
+        <h2>Add a book: <button onclick="showDiv()" style="padding:0;"><img src="Images/plus.png" width="20"></button></h2>
+        <div id="input" style="display:none;">
+            <div>
+                <input type="text" onkeyup="addBookEnter(event)" placeholder="Book title" id="bookTitle" />
+                <input type="text" onkeyup="addBookEnter(event)" placeholder="Author name" id="authorName" />
+                <input type="text" onkeyup="addBookEnter(event)" placeholder="Score it!(1-10)" id="score" />
+            </div>
+            <div class="b1">
+                <button onclick="addBook()">Add</button>
+                <button onclick="reset()">Reset</button>
+                <button onclick="finish()">Finish adding</button>
+            </div>
+        </div>
+        <div class="container2"><h3>Your Books:</h3>
+            <aside id="sidebar">
+                <input type="text" placeholder="Search" id="searchName" onkeyup="search()">
+                <button onclick="clearSearch()" id="cs">Clear filters</button>
+                <div><p>Count numbers: <output id="result"></output></p></div>
+                <div><p><output id="result"></output></p></div>
+            </aside>
+            <button class="reset" onclick="resetList()">Reset Your Book List</button>
+            <ul id="bookList">
+                <li class="header">
+                    <div class="left">Title</div>
+                    <div class="center">Author</div>
+                    <div class="center">Score</div>
+                    <div class="center">Edit</div>
+                    <div class="right">Delete</div>
+                </li>
+            </ul>
+            <div class="searchNotFound" id="searchNotFound" style="display:none;">Oops! We couldn't find what you are looking for. Try revising your search.</div>
+        </div>
+    </div>
+</body>
+</html>
